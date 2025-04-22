@@ -5,8 +5,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conteúdos de Liderança com Kátia Magni</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; color: #333; }
+    header { background-color: #4b1fa5; color: white; padding: 1.5rem; text-align: center; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    section { padding: 2rem; max-width: 960px; margin: auto; }
+    footer { background-color: #4b1fa5; color: white; padding: 2rem; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: #f4f4f4; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .calendar-link { text-decoration: none; color: #4b1fa5; font-weight: bold; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 0.5rem; }
+  </style>
 </head>
 <body>
-  <p style="text-align:center; margin-top:100px;">Conteúdo atualizado com o calendário completo e artigos que aparecem somente nas datas programadas.</p>
+  <header>
+    <h1>Conteúdos de Liderança com Kátia Magni</h1>
+    <nav>
+      <a href="#artigo-dia">Início</a>
+      <a href="#calendario">Conteúdos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <div id="artigo-dia" style="padding: 2rem;">
+    <h2 style="color: #4b1fa5;">Liderança em Tempos de Mudança</h2>
+    <p>Em um mundo cada vez mais imprevisível, líderes precisam desenvolver agilidade emocional, clareza de propósito e habilidade de comunicação para navegar por transformações constantes.</p>
+    <p>A liderança em tempos de mudança não exige certezas absolutas, mas sim a coragem de agir com responsabilidade, escutar a equipe e ajustar o rumo diante de novos contextos. Flexibilidade, empatia e confiança se tornam pilares essenciais.</p>
+    <p><strong>Reflita:</strong> Você inspira sua equipe mesmo quando o cenário é incerto? Como você lida com o medo da mudança em você e nos outros?</p>
+  </div>
+
+  <div id="countdown" style="text-align: center; margin-top: 2rem; font-size: 1.25rem;">
+    Próxima publicação em 22/04/2025
+  </div>
+
+  <!-- Adicionado novamente as seções do site -->
+  <section id="calendario">
+    <h2>Calendário Editorial</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Abril 2025</h3>
+        <ul>
+          <li><a class="calendar-link" href="#21-abril">21/04 - Liderança em Tempos de Mudança</a></li>
+          <li><a class="calendar-link" href="#22-abril">22/04 - Segurança Psicológica</a></li>
+          <li><a class="calendar-link" href="#24-abril">24/04 - Conversas Difíceis</a></li>
+          <li><a class="calendar-link" href="#26-abril">26/04 - Ambientes Inovadores</a></li>
+          <li><a class="calendar-link" href="#29-abril">29/04 - Liderança Autêntica</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Apoio às Lideranças nos Grupos VIP's</h2>
+    <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; margin: auto;">
+      Este projeto foi criado por <strong>Kátia Magni</strong> para apoiar as lideranças que participam dos grupos VIP's, oferecendo conteúdos estratégicos e práticos que podem ser aplicados imediatamente no dia a dia profissional.
+    </p>
+    <div class="grid" style="margin-top: 2rem;">
+      <div class="card"><h4>🧠 Desenvolvimento Pessoal</h4><p>Conteúdos sobre autoconhecimento, inteligência emocional e autocuidado.</p></div>
+      <div class="card"><h4>👥 Gestão de Equipes</h4><p>Estratégias para desenvolver times de alta performance, confiança e colaboração.</p></div>
+      <div class="card"><h4>💬 Comunicação Estratégica</h4><p>Técnicas de conversas difíceis, escuta ativa e cultura de feedback.</p></div>
+      <div class="card"><h4>♟️ Pensamento Estratégico</h4><p>Decisões de longo prazo, gestão do tempo, inovação e adaptabilidade.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Fique por dentro das novidades</h3>
+    <form onsubmit="event.preventDefault(); alert('Cadastro realizado com sucesso!');" style="margin-top: 1rem;">
+      <input type="email" placeholder="Digite seu e-mail" required style="padding: 0.75rem; border-radius: 6px; border: none; width: 250px;">
+      <button type="submit" style="padding: 0.75rem 1.5rem; background: white; color: #4b1fa5; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">Cadastrar</button>
+    </form>
+    <p style="margin-top: 2rem;">Siga nas redes sociais:</p>
+    <p><a href="https://www.instagram.com/katia_magni_coach" style="color: white;">Instagram</a> | <a href="https://www.linkedin.com/in/katiamagni/" style="color: white;">LinkedIn</a></p>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2025 Kátia Magni. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
