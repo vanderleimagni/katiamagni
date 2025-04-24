@@ -1,320 +1,337 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conteúdos de Liderança com Kátia Magni</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; color: #333; }
-    header { background-color: #4b1fa5; color: white; padding: 1.5rem; text-align: center; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem; max-width: 960px; margin: auto; }
-    footer { background-color: #4b1fa5; color: white; padding: 2rem; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .card { background: #f4f4f4; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .calendar-link { text-decoration: none; color: #4b1fa5; font-weight: bold; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 0.5rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdos de Liderança para torná-lo(a) estratégico(a)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/interactive.css">
+    <style>
+        :root {
+            --primary-color: #4e2a84;
+            --secondary-color: #7c4dff;
+            --accent-color: #ff6d00;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        .content-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .tab-content {
+            padding: 2rem 0;
+        }
+        
+        .nav-tabs .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .content-date {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .content-tag {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .share-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .share-button:hover {
+            background-color: #e65100;
+            color: white;
+        }
+        
+        .share-button i {
+            margin-right: 0.5rem;
+        }
+        
+        .calendar-preview {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .calendar-item {
+            border-left: 4px solid var(--secondary-color);
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            background-color: var(--light-color);
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .calendar-item.past {
+            border-left-color: var(--accent-color);
+        }
+        
+        .calendar-item.today {
+            border-left-color: #28a745;
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+        
+        .calendar-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .calendar-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Conteúdos de Liderança com Kátia Magni</h1>
-    <nav>
-      <a href="#artigo-dia">Início</a>
-      <a href="#calendario">Conteúdos</a>
-      <a href="#sobre">Sobre</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Conteúdos de Liderança com Kátia Magni</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conteudos">Conteúdos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendario.html">Calendário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section id="artigo-dia" style="padding: 2rem;">
-  <div id="21-abril" style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Liderança em Tempos de Mudança</h2>
-    <p>Em um mundo cada vez mais imprevisível, líderes precisam desenvolver agilidade emocional, clareza de propósito e habilidade de comunicação para navegar por transformações constantes.</p>
-    <p>A liderança em tempos de mudança não exige certezas absolutas, mas sim a coragem de agir com responsabilidade, escutar a equipe e ajustar o rumo diante de novos contextos. Flexibilidade, empatia e confiança se tornam pilares essenciais.</p>
-    <p><strong>Reflita:</strong> Você inspira sua equipe mesmo quando o cenário é incerto? Como você lida com o medo da mudança em você e nos outros?</p>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container text-center">
+            <h1 class="hero-title">Conteúdos de Liderança para torná-lo(a) estratégico(a)</h1>
+            <a href="#conteudos" class="btn btn-light btn-lg">Ver Conteúdos</a>
+        </div>
+    </section>
 
-<section id="calendario">
-  <h2 style="color: #4b1fa5; text-align: center;">Calendário Editorial</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>Abril 2025</h4>
-      <ul>
-        <li><a class="calendar-link" href="#21-abril">21/04 - Liderança em Tempos de Mudança</a></li>
-        <li><a class="calendar-link" href="#22-abril">22/04 - Segurança Psicológica: Equipes de Alto Desempenho</a></li>
-        <li><a class="calendar-link" href="#24-abril">24/04 - Conversas Difíceis</a></li>
-        <li><a class="calendar-link" href="#26-abril">26/04 - Ambientes Inovadores</a></li>
-        <li><a class="calendar-link" href="#29-abril">29/04 - Liderança Autêntica</a></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4>Maio 2025</h4>
-      <ul>
-        <li><a class="calendar-link" href="#01-maio">01/05 - Inteligência Emocional</a></li>
-        <li><a class="calendar-link" href="#03-maio">03/05 - Feedback Eficaz</a></li>
-        <li><a class="calendar-link" href="#06-maio">06/05 - Liderança Inclusiva</a></li>
-        <li><a class="calendar-link" href="#08-maio">08/05 - Gestão de Conflitos</a></li>
-        <li><a class="calendar-link" href="#10-maio">10/05 - Comunicação Estratégica</a></li>
-        <li><a class="calendar-link" href="#13-maio">13/05 - Desenvolvimento de Equipes</a></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4>Junho 2025</h4>
-      <ul>
-        <li><a class="calendar-link" href="#03-junho">03/06 - Liderança Feminina</a></li>
-        <li><a class="calendar-link" href="#05-junho">05/06 - Gestão do Tempo</a></li>
-        <li><a class="calendar-link" href="#07-junho">07/06 - Resiliência</a></li>
-        <li><a class="calendar-link" href="#10-junho">10/06 - Tomada de Decisão</a></li>
-        <li><a class="calendar-link" href="#12-junho">12/06 - Delegação Eficaz</a></li>
-        <li><a class="calendar-link" href="#14-junho">14/06 - Mindfulness para Líderes</a></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4>Julho 2025</h4>
-      <ul>
-        <li><a class="calendar-link" href="#01-julho">01/07 - Liderança Estratégica</a></li>
-        <li><a class="calendar-link" href="#03-julho">03/07 - Gestão de Mudanças</a></li>
-        <li><a class="calendar-link" href="#05-julho">05/07 - Storytelling para Líderes</a></li>
-        <li><a class="calendar-link" href="#08-julho">08/07 - Networking Estratégico</a></li>
-        <li><a class="calendar-link" href="#10-julho">10/07 - Equilíbrio Vida-Trabalho</a></li>
-        <li><a class="calendar-link" href="#12-julho">12/07 - Inovação e Criatividade</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="22-abril" style="padding: 2rem; display: none;">
-    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-      <h2 style="color: #4b1fa5; margin-top: 0;">Segurança Psicológica: A Base para Equipes de Alto Desempenho</h2>
-      <p>A segurança psicológica é um conceito fundamental para o desenvolvimento de equipes de alto desempenho, mas ainda é pouco compreendido por muitos líderes. Quando falamos em segurança psicológica, estamos nos referindo a um ambiente onde as pessoas se sentem confortáveis para assumir riscos interpessoais, expressar opiniões divergentes e compartilhar ideias sem medo de retaliação ou humilhação.</p>
-      <p>Pesquisas conduzidas pela Google em seu Projeto Aristóteles revelaram que a segurança psicológica é o fator mais importante para o sucesso das equipes, superando até mesmo a competência técnica individual. Equipes com alta segurança psicológica apresentam maior inovação, melhor resolução de problemas e maior engajamento dos colaboradores.</p>
-      <p><strong>Como líder, você pode promover a segurança psicológica através de algumas práticas essenciais:</strong></p>
-      <ul>
-        <li><strong>Modelar vulnerabilidade:</strong> Admitir erros e estar aberto a feedback cria um exemplo poderoso.</li>
-        <li><strong>Responder produtivamente:</strong> Agradeça pelas contribuições e explore diferentes pontos de vista com curiosidade.</li>
-        <li><strong>Estabelecer normas claras:</strong> Estimule a discordância respeitosa e a responsabilidade por levantar preocupações.</li>
-      </ul>
-      <p>Lembre-se que construir segurança psicológica é um processo contínuo. Pequenas interações diárias importam mais do que grandes discursos. Ao criar esse ambiente de confiança, você estará cultivando o solo fértil para a inovação e alta performance florescerem.</p>
-      <p><strong>Reflita:</strong> Como você reage quando um membro da sua equipe discorda de você em uma reunião? Sua resposta pode revelar muito sobre o nível de segurança psicológica em seu ambiente de trabalho.</p>
-    </div>
-  </section>
-
-<!-- Conteúdos futuros aqui -->
-<section id="24-abril" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Conversas Difíceis: Transformando Conflitos em Oportunidades</h2>
-    <p>Conteúdo reservado para o dia 24/04.</p>
-  </div>
-</section>
-
-<section id="26-abril" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Segurança Psicológica: Criando Ambientes de Trabalho Inovadores</h2>
-    <p>Conteúdo reservado para o dia 26/04.</p>
-  </div>
-</section>
-
-<section id="29-abril" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Liderança Autêntica: O Poder de Liderar com Propósito</h2>
-    <p>Conteúdo reservado para o dia 29/04.</p>
-  </div>
-</section>
-
-<section id="01-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Inteligência Emocional: Gerenciando Emoções em Ambientes Desafiadores</h2>
-    <p>Conteúdo reservado para o dia 01/05.</p>
-  </div>
-</section>
-
-<section id="03-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Feedback Eficaz: A Arte de Dar e Receber Feedback Construtivo</h2>
-    <p>Conteúdo reservado para o dia 03/05.</p>
-  </div>
-</section>
-
-<section id="06-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Liderança Inclusiva: Valorizando a Diversidade nas Equipes</h2>
-    <p>Conteúdo reservado para o dia 06/05.</p>
-  </div>
-</section>
-
-<section id="08-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Gestão de Conflitos: Estratégias para Resolver Divergências</h2>
-    <p>Conteúdo reservado para o dia 08/05.</p>
-  </div>
-</section>
-
-<section id="10-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Comunicação Estratégica: Mensagens que Inspiram e Engajam</h2>
-    <p>Conteúdo reservado para o dia 10/05.</p>
-  </div>
-</section>
-
-<section id="13-maio" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Desenvolvimento de Equipes: Construindo Times de Alta Performance</h2>
-    <p>Conteúdo reservado para o dia 13/05.</p>
-  </div>
-</section>
-
-<div id="countdown" style="text-align: center; margin-top: 2rem; font-size: 1.25rem;">
-    Próxima publicação em 22/04/2025
-  </div>
-
-<section id="03-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Liderança Feminina: Superando Barreiras e Maximizando Potencial</h2>
-    <p>Conteúdo reservado para o dia 03/06.</p>
-  </div>
-</section>
-
-<section id="05-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Gestão do Tempo: Produtividade Estratégica para Líderes</h2>
-    <p>Conteúdo reservado para o dia 05/06.</p>
-  </div>
-</section>
-
-<section id="07-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Resiliência: Fortalecendo sua Capacidade de Adaptação</h2>
-    <p>Conteúdo reservado para o dia 07/06.</p>
-  </div>
-</section>
-
-<section id="10-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Tomada de Decisão: Métodos para Decisões Mais Eficazes</h2>
-    <p>Conteúdo reservado para o dia 10/06.</p>
-  </div>
-</section>
-
-<section id="12-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Delegação Eficaz: Empodere sua Equipe e Multiplique Resultados</h2>
-    <p>Conteúdo reservado para o dia 12/06.</p>
-  </div>
-</section>
-
-<section id="14-junho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Mindfulness para Líderes: Presença e Foco no Ambiente Corporativo</h2>
-    <p>Conteúdo reservado para o dia 14/06.</p>
-  </div>
-</section>
-
-<section id="01-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Liderança Estratégica: Pensando Além do Horizonte</h2>
-    <p>Conteúdo reservado para o dia 01/07.</p>
-  </div>
-</section>
-
-<section id="03-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Gestão de Mudanças: Liderando em Tempos de Transformação</h2>
-    <p>Conteúdo reservado para o dia 03/07.</p>
-  </div>
-</section>
-
-<section id="05-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Storytelling para Líderes: O Poder das Narrativas</h2>
-    <p>Conteúdo reservado para o dia 05/07.</p>
-  </div>
-</section>
-
-<section id="08-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Networking Estratégico: Construindo Relacionamentos Significativos</h2>
-    <p>Conteúdo reservado para o dia 08/07.</p>
-  </div>
-</section>
-
-<section id="10-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Equilíbrio Vida-Trabalho: Sustentabilidade na Liderança</h2>
-    <p>Conteúdo reservado para o dia 10/07.</p>
-  </div>
-</section>
-
-<section id="12-julho" style="padding: 2rem; display: none;">
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 2rem; background-color: #fafafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h2 style="color: #4b1fa5; margin-top: 0;">Inovação e Criatividade: Fomentando Novas Ideias na Equipe</h2>
-    <p>Conteúdo reservado para o dia 12/07.</p>
-  </div>
-</section>
-
-<div id="countdown"
-
-<section>
-
-<section id="sobre">
-  <h2>Apoio às Lideranças nos Grupos VIP's</h2>
-  <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; margin: auto;">
-    Este projeto foi criado por <strong>Kátia Magni</strong> para apoiar as lideranças que participam dos grupos VIP's, oferecendo conteúdos estratégicos e práticos que podem ser aplicados imediatamente no dia a dia profissional.
-  </p>
-  <div class="grid" style="margin-top: 2rem;">
-    <div class="card"><h4>🧠 Desenvolvimento Pessoal</h4><p>Conteúdos sobre autoconhecimento, inteligência emocional e autocuidado.</p></div>
-    <div class="card"><h4>👥 Gestão de Equipes</h4><p>Estratégias para desenvolver times de alta performance, confiança e colaboração.</p></div>
-    <div class="card"><h4>💬 Comunicação Estratégica</h4><p>Técnicas de conversas difíceis, escuta ativa e cultura de feedback.</p></div>
-    <div class="card"><h4>♟️ Pensamento Estratégico</h4><p>Decisões de longo prazo, gestão do tempo, inovação e adaptabilidade.</p></div>
-  </div>
-</section>
-
-<footer>
-  <h3>Fique por dentro das novidades</h3>
-  <p style="margin-top: 1rem; font-size: 1.05rem; max-width: 640px; margin-left: auto; margin-right: auto;">
-    Novos conteúdos são publicados automaticamente às segundas, quartas e sextas-feiras, de abril a julho de 2025. Acompanhe por aqui ou pelas redes sociais.
-  </p>
-  <p style="margin-top: 2rem;">Siga nas redes sociais:</p>
-  <p><a href="https://www.instagram.com/katia_magni_coach" style="color: white;">Instagram</a> | <a href="https://www.linkedin.com/in/katiamagni/" style="color: white;">LinkedIn</a></p>
-  <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2025 Kátia Magni. Todos os direitos reservados.</p>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }).split('/').reverse().join('-');
-    const dias = [
-      { id: '21-abril', data: '2025-04-21' },
-      { id: '22-abril', data: '2025-04-22' },
-      { id: '24-abril', data: '2025-04-24' },
-      { id: '26-abril', data: '2025-04-26' },
-      { id: '29-abril', data: '2025-04-29' },
-      { id: '01-maio', data: '2025-05-01' },
-      { id: '03-maio', data: '2025-05-03' },
-      { id: '06-maio', data: '2025-05-06' },
-      { id: '08-maio', data: '2025-05-08' },
-      { id: '10-maio', data: '2025-05-10' },
-      { id: '13-maio', data: '2025-05-13' },
-      { id: '03-junho', data: '2025-06-03' },
-      { id: '05-junho', data: '2025-06-05' },
-      { id: '07-junho', data: '2025-06-07' },
-      { id: '10-junho', data: '2025-06-10' },
-      { id: '12-junho', data: '2025-06-12' },
-      { id: '14-junho', data: '2025-06-14' },
-      { id: '01-julho', data: '2025-07-01' },
-      { id: '03-julho', data: '2025-07-03' },
-      { id: '05-julho', data: '2025-07-05' },
-      { id: '08-julho', data: '2025-07-08' },
-      { id: '10-julho', data: '2025-07-10' },
-      { id: '12-julho', data: '2025-07-12' }
-    ];
-    dias.forEach(({ id, data }) => {
-      if (hoje >= data) {
-        const section = document.getElementById(id);
-        if (section) section.style.display = 'block';
-      }
-    });
-  });
-</script>
-</body>
-</html>
+    <!-- Main Content -->
+    <div class="container" id="conteudos">
+        <h2 class="text-center mb-4">Conteúdos da Semana</h2>
+        
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs nav-fill mb-4" id="contentTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="segunda-tab" data-bs-toggle="tab" data-bs-target="#segunda" type="button" role="tab">Segunda-feira</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="quarta-tab" data-bs-toggle="tab" data-bs-target="#quarta" type="button" role="tab">Quarta-feira</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sexta-tab" data-bs-toggle="tab" data-bs-target="#sexta" type="button" role="tab">Sexta-feira</button>
+            </li>
+        </ul>
+        
+        <!-- Tabs Content -->
+        <div class="tab-content" id="contentTabsContent">
+            <!-- Segunda-feira -->
+            <div class="tab-pane fade" id="segunda" role="tabpanel">
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="mb-0">Segurança Psicológica: A Base para Equipes de Alto Desempenho</h3>
+                            <span class="content-date">22 de Abril, 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-tags mb-3">
+                            <span class="content-tag">Segurança Psicológica</span>
+                            <span class="content-tag">Liderança</span>
+                            <span class="content-tag">Equipes</span>
+                        </div>
+                        
+                        <p>A segurança psicológica é um conceito fundamental para o desenvolvimento de equipes de alto desempenho, mas ainda é pouco compreendido por muitos líderes. Quando falamos em segurança psicológica, estamos nos referindo a um ambiente onde as pessoas se sentem confortáveis para assumir riscos interpessoais, expressar opiniões divergentes e compartilhar ideias sem medo de retaliação ou humilhação.</p>
+                        
+                        <p>Pesquisas conduzidas pela Google em seu Projeto Aristóteles revelaram que a segurança psicológica é o fator mais importante para o sucesso das equipes, superando até mesmo a competência técnica individual. Equipes com alta segurança psicológica apresentam maior inovação, melhor resolução de problemas e maior engajamento dos colaboradores.</p>
+                        
+                        <p>Como líder, você pode promover a segurança psicológica através de algumas práticas essenciais:</p>
+                        
+                        <p><strong>1. Modelar vulnerabilidade:</strong> Quando você admite erros e demonstra que está aberto a feedback, cria um exemplo poderoso para sua equipe. Frases como "Eu não tenho certeza, o que vocês acham?" ou "Cometi um erro e aprendi que..." normalizam a vulnerabilidade.</p>
+                        
+                        <p><strong>2. Responder produtivamente às contribuições:</strong> A maneira como você reage quando alguém compartilha uma ideia ou preocupação é crucial. Agradeça pela contribuição, mesmo que discorde, e explore a perspectiva com curiosidade genuína.</p>
+                        
+                        <p><strong>3. Estabelecer normas claras:</strong> Defina explicitamente que discordância respeitosa é bem-vinda e que todos têm responsabilidade de expressar preocupações. Crie acordos de equipe sobre como lidar com conflitos e diferentes pontos de vista.</p>
+                        
+                        <p>Lembre-se que construir segurança psicológica é um processo contínuo, não um destino final. Pequenas interações diárias são mais importantes que grandes declarações ou políticas. Quando sua equipe percebe que pode falar abertamente, questionar pressupostos e propor ideias inovadoras sem medo, você terá criado o alicerce para um desempenho excepcional.</p>
+                        
+                        <p>Reflita: Como você reage quando um membro da sua equipe discorda de você em uma reunião? Sua resposta a essa pergunta pode revelar muito sobre o nível de segurança psicológica em seu ambiente de trabalho.</p>
+                        
+                        <a href="#" class="share-button"><i class="fab fa-whatsapp"></i> Compartilhar no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quarta-feira -->
+            <div class="tab-pane fade show active" id="quarta" role="tabpanel">
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="mb-0">Conversas Difíceis: Transformando Conflitos em Oportunidades</h3>
+                            <span class="content-date">24 de Abril, 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-tags mb-3">
+                            <span class="content-tag">Conversas Difíceis</span>
+                            <span class="content-tag">Comunicação</span>
+                            <span class="content-tag">Resolução de Conflitos</span>
+                        </div>
+                        
+                        <p>As conversas difíceis são inevitáveis na jornada de qualquer líder. Seja dando feedback corretivo, abordando comportamentos problemáticos ou gerenciando expectativas não atendidas, a maneira como conduzimos essas conversas pode definir nossa eficácia como líderes e a saúde de nossas relações profissionais.</p>
+                        
+                        <p>O primeiro passo para transformar conversas difíceis em oportunidades de crescimento é reconhecer que evitá-las geralmente causa mais danos do que enfrentá-las. Quando adiamos uma conversa necessária, permitimos que problemas pequenos se transformem em questões maiores, prejudicamos a confiança e perdemos oportunidades de desenvolvimento.</p>
+                        
+                        <p>Uma abordagem estruturada pode tornar essas conversas mais produtivas e menos estressantes. Considere este framework de quatro etapas:</p>
+                        
+                        <p><strong>1. Preparação consciente:</strong> Antes da conversa, clarifique seu objetivo, identifique fatos específicos (não interpretações) e reconheça suas próprias emoções. Pergunte-se: "O que realmente quero alcançar com esta conversa?" e "Como posso criar um ambiente seguro para o diálogo?"</p>
+                        
+                        <p><strong>2. Abertura com intenção:</strong> Inicie a conversa estabelecendo um tom colaborativo. Expresse sua intenção positiva e compartilhe observações específicas, não julgamentos. Por exemplo: "Gostaria de conversar sobre o projeto X porque acredito que podemos encontrar uma solução que funcione para todos" em vez de "Precisamos falar sobre seus erros no projeto X".</p>
+                        
+                        <p><strong>3. Exploração com curiosidade:</strong> Pratique a escuta ativa e faça perguntas abertas para entender a perspectiva da outra pessoa. Resista à tentação de interromper ou defender seu ponto de vista imediatamente. Frases como "Ajude-me a entender sua perspectiva" ou "O que você vê que eu posso estar perdendo?" abrem espaço para um diálogo genuíno.</p>
+                        
+                        <p><strong>4. Resolução colaborativa:</strong> Trabalhe juntos para identificar próximos passos concretos. Busque áreas de acordo e estabeleça expectativas claras para o futuro. Termine a conversa reconhecendo a contribuição da pessoa e reafirmando seu compromisso com o relacionamento.</p>
+                        
+                        <p>Lembre-se que a habilidade de conduzir conversas difíceis com empatia e clareza é como um músculo - fortalece-se com a prática. Cada conversa difícil bem conduzida constrói sua confiança e competência como líder, além de fortalecer a cultura de feedback em sua equipe.</p>
+                        
+                        <p>Reflita: Qual conversa difícil você tem adiado? Que impacto esse adiamento está tendo em você, na outra pessoa e na sua equipe?</p>
+                        
+                        <a href="#" class="share-button"><i class="fab fa-whatsapp"
+(Content truncated due to size limit. Use line ranges to read in chunks)
