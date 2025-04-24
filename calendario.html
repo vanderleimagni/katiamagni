@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Conteúdos - Kátia Magni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/interactive.css">
+    <style>
+        :root {
+            --primary-color: #4e2a84;
+            --secondary-color: #7c4dff;
+            --accent-color: #ff6d00;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .calendar-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .month-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .calendar-item {
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--light-color);
+            border-radius: 0 5px 5px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .calendar-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .calendar-item.past {
+            border-left-color: var(--accent-color);
+        }
+        
+        .calendar-item.today {
+            border-left-color: #28a745;
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+        
+        .calendar-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .calendar-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .calendar-tag {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .calendar-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Conteúdos de Liderança com Kátia Magni</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#conteudos">Conteúdos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calendario.html">Calendário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">Calendário de Conteúdos</h1>
+            <p class="hero-subtitle">Planejamento completo dos conteúdos de liderança</p>
+        </div>
+    </section>
+
+    <!-- Calendar Content -->
+    <div class="container">
+        <div class="calendar-container">
+            <h2 class="month-header">Abril 2025</h2>
+            
+            <!-- Semana 1 -->
+            <div class="calendar-item past">
+                <div class="calendar-date">22 de Abril (Segunda-feira)</div>
+                <div class="calendar-title">Segurança Psicológica: A Base para Equipes de Alto Desempenho</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Segurança Psicológica</span>
+                    <span class="calendar-tag">Liderança</span>
+                    <span class="calendar-tag">Equipes</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item today">
+                <div class="calendar-date">24 de Abril (Quarta-feira)</div>
+                <div class="calendar-title">Conversas Difíceis: Transformando Conflitos em Oportunidades</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Conversas Difíceis</span>
+                    <span class="calendar-tag">Comunicação</span>
+                    <span class="calendar-tag">Resolução de Conflitos</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">26 de Abril (Sexta-feira)</div>
+                <div class="calendar-title">Segurança Psicológica: Criando Ambientes de Trabalho Inovadores</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Segurança Psicológica</span>
+                    <span class="calendar-tag">Inovação</span>
+                    <span class="calendar-tag">Cultura Organizacional</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">29 de Abril (Segunda-feira)</div>
+                <div class="calendar-title">Liderança Autêntica: O Poder de Liderar com Propósito</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Liderança Autêntica</span>
+                    <span class="calendar-tag">Propósito</span>
+                    <span class="calendar-tag">Valores</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <h2 class="month-header mt-5">Maio 2025</h2>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">01 de Maio (Quinta-feira)</div>
+                <div class="calendar-title">Inteligência Emocional: Gerenciando Emoções em Ambientes Desafiadores</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Inteligência Emocional</span>
+                    <span class="calendar-tag">Autogestão</span>
+                    <span class="calendar-tag">Resiliência</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">03 de Maio (Sábado)</div>
+                <div class="calendar-title">Feedback Eficaz: A Arte de Dar e Receber Feedback Construtivo</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Feedback</span>
+                    <span class="calendar-tag">Desenvolvimento</span>
+                    <span class="calendar-tag">Comunicação</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">06 de Maio (Terça-feira)</div>
+                <div class="calendar-title">Liderança Inclusiva: Valorizando a Diversidade nas Equipes</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Diversidade</span>
+                    <span class="calendar-tag">Inclusão</span>
+                    <span class="calendar-tag">Equidade</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">08 de Maio (Quinta-feira)</div>
+                <div class="calendar-title">Gestão de Conflitos: Estratégias para Resolver Divergências</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Conflitos</span>
+                    <span class="calendar-tag">Mediação</span>
+                    <span class="calendar-tag">Negociação</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">10 de Maio (Sábado)</div>
+                <div class="calendar-title">Comunicação Estratégica: Mensagens que Inspiram e Engajam</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Comunicação</span>
+                    <span class="calendar-tag">Persuasão</span>
+                    <span class="calendar-tag">Engajamento</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">13 de Maio (Terça-feira)</div>
+                <div class="calendar-title">Desenvolvimento de Equipes: Construindo Times de Alta Performance</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Equipes</span>
+                    <span class="calendar-tag">Performance</span>
+                    <span class="calendar-tag">Colaboração</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">15 de Maio (Quinta-feira)</div>
+                <div class="calendar-title">Gestão do Tempo: Produtividade Estratégica para Líderes</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Produtividade</span>
+                    <span class="calendar-tag">Priorização</span>
+                    <span class="calendar-tag">Eficiência</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">17 de Maio (Sábado)</div>
+                <div class="calendar-title">Tomada de Decisão: Métodos para Decisões Mais Eficazes</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Decisões</span>
+                    <span class="calendar-tag">Análise</span>
+                    <span class="calendar-tag">Estratégia</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">20 de Maio (Terça-feira)</div>
+                <div class="calendar-title">Delegação Eficaz: Empodere sua Equipe e Multiplique Resultados</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Delegação</span>
+                    <span class="calendar-tag">Empoderamento</span>
+                    <span class="calendar-tag">Confiança</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">22 de Maio (Quinta-feira)</div>
+                <div class="calendar-title">Mindfulness para Líderes: Presença e Foco no Ambiente Corporativo</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Mindfulness</span>
+                    <span class="calendar-tag">Atenção Plena</span>
+                    <span class="calendar-tag">Bem-estar</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">24 de Maio (Sábado)</div>
+                <div class="calendar-title">Resiliência: Fortalecendo sua Capacidade de Adaptação</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Resiliência</span>
+                    <span class="calendar-tag">Adaptabilidade</span>
+                    <span class="calendar-tag">Superação</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">27 de Maio (Terça-feira)</div>
+                <div class="calendar-title">Liderança Situacional: Adaptando seu Estilo às Necessidades da Equipe</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Liderança Situacional</span>
+                    <span class="calendar-tag">Flexibilidade</span>
+                    <span class="calendar-tag">Adaptação</span>
+                </div>
+                <a href="index.html#segunda" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">29 de Maio (Quinta-feira)</div>
+                <div class="calendar-title">Storytelling para Líderes: O Poder das Narrativas</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Storytelling</span>
+                    <span class="calendar-tag">Narrativas</span>
+                    <span class="calendar-tag">Comunicação</span>
+                </div>
+                <a href="index.html#quarta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">31 de Maio (Sábado)</div>
+                <div class="calendar-title">Networking Estratégico: Construindo Relacionamentos Significativos</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Networking</span>
+                    <span class="calendar-tag">Relacionamentos</span>
+                    <span class="calendar-tag">Conexões</span>
+                </div>
+                <a href="index.html#sexta" class="btn btn-sm btn-outline-primary mt-2">Ver conteúdo</a>
+            </div>
+            
+            <h2 class="month-header mt-5">Junho 2025</h2>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">03 de Junho (Terça-feira)</div>
+                <div class="calendar-title">Liderança Feminina: Superando Barreiras e Maximizando Potencial</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Liderança Feminina</span>
+                    <span class="calendar-tag">Empoderamento</span>
+                    <span class="calendar-tag">Diversidade</span>
+                </div>
+                <a href="conteudo_03_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">05 de Junho (Quinta-feira)</div>
+                <div class="calendar-title">Gestão do Tempo: Produtividade Estratégica para Líderes</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Produtividade</span>
+                    <span class="calendar-tag">Priorização</span>
+                    <span class="calendar-tag">Eficiência</span>
+                </div>
+                <a href="conteudo_05_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">07 de Junho (Sábado)</div>
+                <div class="calendar-title">Resiliência: Fortalecendo sua Capacidade de Adaptação</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Resiliência</span>
+                    <span class="calendar-tag">Adaptabilidade</span>
+                    <span class="calendar-tag">Superação</span>
+                </div>
+                <a href="conteudo_07_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <!-- Mais itens de Junho -->
+            <div class="calendar-item">
+                <div class="calendar-date">10 de Junho (Terça-feira)</div>
+                <div class="calendar-title">Tomada de Decisão: Métodos para Decisões Mais Eficazes</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Decisões</span>
+                    <span class="calendar-tag">Análise</span>
+                    <span class="calendar-tag">Estratégia</span>
+                </div>
+                <a href="conteudo_10_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">12 de Junho (Quinta-feira)</div>
+                <div class="calendar-title">Delegação Eficaz: Empodere sua Equipe e Multiplique Resultados</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Delegação</span>
+                    <span class="calendar-tag">Empoderamento</span>
+                    <span class="calendar-tag">Confiança</span>
+                </div>
+                <a href="conteudo_12_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">14 de Junho (Sábado)</div>
+                <div class="calendar-title">Mindfulness para Líderes: Presença e Foco no Ambiente Corporativo</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Mindfulness</span>
+                    <span class="calendar-tag">Atenção Plena</span>
+                    <span class="calendar-tag">Bem-estar</span>
+                </div>
+                <a href="conteudo_14_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">17 de Junho (Terça-feira)</div>
+                <div class="calendar-title">Gestão de Mudanças: Liderando em Tempos de Transformação</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Mudança</span>
+                    <span class="calendar-tag">Transformação</span>
+                    <span class="calendar-tag">Adaptação</span>
+                </div>
+                <a href="conteudo_17_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">19 de Junho (Quinta-feira)</div>
+                <div class="calendar-title">Equilíbrio Vida-Trabalho: Sustentabilidade na Liderança</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Equilíbrio</span>
+                    <span class="calendar-tag">Bem-estar</span>
+                    <span class="calendar-tag">Sustentabilidade</span>
+                </div>
+                <a href="conteudo_19_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">21 de Junho (Sábado)</div>
+                <div class="calendar-title">Inovação e Criatividade: Fomentando Novas Ideias na Equipe</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Inovação</span>
+                    <span class="calendar-tag">Criatividade</span>
+                    <span class="calendar-tag">Ideação</span>
+                </div>
+                <a href="conteudo_21_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">24 de Junho (Terça-feira)</div>
+                <div class="calendar-title">Liderança Estratégica: Pensando Além do Horizonte</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Estratégia</span>
+                    <span class="calendar-tag">Visão</span>
+                    <span class="calendar-tag">Planejamento</span>
+                </div>
+                <a href="conteudo_24_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">26 de Junho (Quinta-feira)</div>
+                <div class="calendar-title">Comunicação Não-Verbal: O Poder da Linguagem Corporal</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Comunicação</span>
+                    <span class="calendar-tag">Linguagem Corporal</span>
+                    <span class="calendar-tag">Presença</span>
+                </div>
+                <a href="conteudo_26_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">28 de Junho (Sábado)</div>
+                <div class="calendar-title">Mentoria e Coaching: Desenvolvendo o Potencial da sua Equipe</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Mentoria</span>
+                    <span class="calendar-tag">Coaching</span>
+                    <span class="calendar-tag">Desenvolvimento</span>
+                </div>
+                <a href="conteudo_28_junho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <h2 class="month-header mt-5">Julho 2025</h2>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">01 de Julho (Terça-feira)</div>
+                <div class="calendar-title">Liderança Estratégica: Pensando Além do Horizonte</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Estratégia</span>
+                    <span class="calendar-tag">Visão</span>
+                    <span class="calendar-tag">Planejamento</span>
+                </div>
+                <a href="conteudo_01_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">03 de Julho (Quinta-feira)</div>
+                <div class="calendar-title">Gestão de Mudanças: Liderando em Tempos de Transformação</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Mudança</span>
+                    <span class="calendar-tag">Transformação</span>
+                    <span class="calendar-tag">Adaptação</span>
+                </div>
+                <a href="conteudo_03_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">05 de Julho (Sábado)</div>
+                <div class="calendar-title">Storytelling para Líderes: O Poder das Narrativas</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Storytelling</span>
+                    <span class="calendar-tag">Narrativas</span>
+                    <span class="calendar-tag">Comunicação</span>
+                </div>
+                <a href="conteudo_05_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">08 de Julho (Terça-feira)</div>
+                <div class="calendar-title">Networking Estratégico: Construindo Relacionamentos Significativos</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Networking</span>
+                    <span class="calendar-tag">Relacionamentos</span>
+                    <span class="calendar-tag">Conexões</span>
+                </div>
+                <a href="conteudo_08_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">10 de Julho (Quinta-feira)</div>
+                <div class="calendar-title">Equilíbrio Vida-Trabalho: Sustentabilidade na Liderança</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Equilíbrio</span>
+                    <span class="calendar-tag">Bem-estar</span>
+                    <span class="calendar-tag">Sustentabilidade</span>
+                </div>
+                <a href="conteudo_10_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">12 de Julho (Sábado)</div>
+                <div class="calendar-title">Inovação e Criatividade: Fomentando Novas Ideias na Equipe</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Inovação</span>
+                    <span class="calendar-tag">Criatividade</span>
+                    <span class="calendar-tag">Ideação</span>
+                </div>
+                <a href="conteudo_12_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">15 de Julho (Terça-feira)</div>
+                <div class="calendar-title">Gestão de Crises: Liderando em Momentos de Incerteza</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Crises</span>
+                    <span class="calendar-tag">Incerteza</span>
+                    <span class="calendar-tag">Resiliência</span>
+                </div>
+                <a href="conteudo_15_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">17 de Julho (Quinta-feira)</div>
+                <div class="calendar-title">Liderança Servidora: O Poder de Servir para Liderar</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Liderança Servidora</span>
+                    <span class="calendar-tag">Empatia</span>
+                    <span class="calendar-tag">Serviço</span>
+                </div>
+                <a href="conteudo_17_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">19 de Julho (Sábado)</div>
+                <div class="calendar-title">Inteligência Cultural: Liderando em Ambientes Diversos</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Diversidade Cultural</span>
+                    <span class="calendar-tag">Inclusão</span>
+                    <span class="calendar-tag">Global</span>
+                </div>
+                <a href="conteudo_19_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">22 de Julho (Terça-feira)</div>
+                <div class="calendar-title">Liderança Remota: Gerenciando Equipes à Distância</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Trabalho Remoto</span>
+                    <span class="calendar-tag">Virtual</span>
+                    <span class="calendar-tag">Colaboração</span>
+                </div>
+                <a href="conteudo_22_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">24 de Julho (Quinta-feira)</div>
+                <div class="calendar-title">Gestão de Talentos: Atraindo e Retendo os Melhores Profissionais</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Talentos</span>
+                    <span class="calendar-tag">Retenção</span>
+                    <span class="calendar-tag">Desenvolvimento</span>
+                </div>
+                <a href="conteudo_24_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">26 de Julho (Sábado)</div>
+                <div class="calendar-title">Liderança Transformacional: Inspirando Mudanças Positivas</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Transformação</span>
+                    <span class="calendar-tag">Inspiração</span>
+                    <span class="calendar-tag">Mudança</span>
+                </div>
+                <a href="conteudo_26_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">29 de Julho (Terça-feira)</div>
+                <div class="calendar-title">Ética na Liderança: Construindo Confiança e Integridade</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Ética</span>
+                    <span class="calendar-tag">Integridade</span>
+                    <span class="calendar-tag">Confiança</span>
+                </div>
+                <a href="conteudo_29_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+            
+            <div class="calendar-item">
+                <div class="calendar-date">31 de Julho (Quinta-feira)</div>
+                <div class="calendar-title">Liderança Sustentável: Equilibrando Resultados e Bem-estar</div>
+                <div class="calendar-tags">
+                    <span class="calendar-tag">Sustentabilidade</span>
+                    <span class="calendar-tag">Bem-estar</span>
+                    <span class="calendar-tag">Equilíbrio</span>
+                </div>
+                <a href="conteudo_31_julho.html" class="btn btn-sm btn-outline-secondary mt-2">Em breve</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2025 Kátia Magni - Todos os direitos reservados</p>
+            <p>Conteúdos de Liderança para torná-lo(a) estratégico(a)</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/enhanced-script.js"></script>
+</body>
+</html>
